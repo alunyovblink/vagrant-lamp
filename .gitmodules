@@ -7,3 +7,9 @@
 [submodule "cookbooks/apache2"]
 	path = cookbooks/apache2
 	url = https://github.com/onehealth-cookbooks/apache2.git
+[submodule "cookbooks/iptables"]
+	path = cookbooks/iptables
+	url = https://github.com/opscode-cookbooks/iptables.git
+[submodule "cookbooks/logrotate"]
+	path = cookbooks/logrotate
+	url = https://github.com/cookbooks/logrotate

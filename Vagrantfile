@@ -10,10 +10,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise64"
+  config.vm.box = "CentOS-6.4-x86_64-v20130427.box"
   
   # URL of the box.
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20130427.box"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -64,15 +64,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
+  
   config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = "cookbooks"
     # chef.roles_path = "../my-recipes/roles"
     # chef.data_bags_path = "../my-recipes/data_bags"
     chef.add_recipe "apache2"
-    #chef.add_recipe "mysql"
+    chef.add_recipe "mysql"
     chef.add_recipe "mysql::server"
     chef.add_recipe "php"
-
+    # chef.add_recipe "iptables"
+  
     chef.json = {
       ":php" => {
         "version" => "5.3.28"
