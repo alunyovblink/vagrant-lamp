@@ -23,8 +23,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network "forwarded_port", guest: 3306, host: 33066
+  #config.vm.network "forwarded_port", guest: 80, host: 8088
+  #config.vm.network "forwarded_port", guest: 3306, host: 33066
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -77,12 +77,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
     chef.json = {
       ":php" => {
-        "version" => "5.3.28"
+        "version" => "5.3.6"
       },
       ":mysql" => {
-        "server_root_password" => "",
-        "server_repl_password" => "",
-        "server_debian_password" => ""
+        "allow_remote_root" => true,
+        "server_root_password" => "rootpass",
+        "server_repl_password" => "rootpass",
+        "server_debian_password" => "rootpass"
       }
     }
   end
