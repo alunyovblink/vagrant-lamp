@@ -60,10 +60,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", "512"]
   end
   
+  # Running shell script to get prepared virtual machine.
+  config.vm.provision :shell, path: "bootstrap.sh"
+  
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
-  #
   config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = "cookbooks"
     # chef.roles_path = "../my-recipes/roles"
