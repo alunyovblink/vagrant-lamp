@@ -61,7 +61,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   
   # Running shell script to get prepared virtual machine.
-  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision :shell, path: "scripts/bootstrap.sh"
   
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
