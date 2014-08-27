@@ -68,22 +68,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # some recipes and/or roles.
   config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = "cookbooks"
-    # chef.roles_path = "../my-recipes/roles"
-    # chef.data_bags_path = "../my-recipes/data_bags"
-    chef.add_recipe "apache2"
-    #chef.add_recipe "mysql"
-    chef.add_recipe "mysql::server"
-    chef.add_recipe "php"
-
-    chef.json = {
-      ":php" => {
-        "version" => "5.3.28"
-      },
-      ":mysql" => {
-        "server_root_password" => "",
-        "server_repl_password" => "",
-        "server_debian_password" => ""
-      }
-    }
+    chef.add_recipe "base_setup"
   end
 end
