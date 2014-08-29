@@ -25,6 +25,14 @@ apache_site "default" do
   enable true
 end
 
+# Installing xdebug
 php_pear "xdebug" do
   action :install
+end
+
+# Generate selfsigned ssl
+execute "make-ssl-cert" do
+  command "make-ssl-cert generate-default-snakeoil --force-overwrite"
+  ignore_failure true
+  action :nothing
 end
