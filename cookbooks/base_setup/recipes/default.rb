@@ -17,7 +17,7 @@ include_recipe "apache2::mod_php5"
 include_recipe "apache2::mod_rewrite"
 
 # Install packages
-%w{ mc }.each do |a_package|
+%w{ mc tmux make }.each do |a_package|
   package a_package
 end
 
