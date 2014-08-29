@@ -40,3 +40,6 @@
 [submodule "cookbooks/yum-epel"]
 	path = cookbooks/yum-epel
 	url = https://github.com/opscode-cookbooks/yum-epel.git
+[submodule "cookbooks/openssl"]
+	path = cookbooks/openssl
+	url = https://github.com/opscode-cookbooks/openssl.git
