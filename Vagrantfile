@@ -44,6 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
   config.vm.synced_folder "../../work2", "/srv/website", owner: "root", group: "root"
+  config.vm.synced_folder "../../logs", "/srv/logs", owner: "root", group: "root", create: true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -69,6 +70,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # some recipes and/or roles.
   config.vm.provision "chef_solo" do |chef|
     chef.cookbooks_path = "cookbooks"
+    chef.data_bags_path = "data_bags"
+    
     chef.add_recipe "base_setup"
   end
 end
