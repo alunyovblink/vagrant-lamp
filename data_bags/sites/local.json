@@ -1,0 +1,6 @@
+{
+    "id": "local",
+    "host": "local.drupal7.com",
+    "docroot": "/srv/website/drupal7",
+    "aliases": []
+}
