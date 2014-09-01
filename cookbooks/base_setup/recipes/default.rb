@@ -17,6 +17,7 @@ include_recipe "php::module_mysql"
 include_recipe "php::module_curl"
 include_recipe "apache2::mod_php5"
 include_recipe "apache2::mod_rewrite"
+include_recipe "apache2::mod_ssl"
 
 # Install system packages
 ["mc", "tmux", "make"].each do |a_package|
@@ -53,11 +54,6 @@ end
   end
 end
 
-#php_pear "PHP_CodeSniffer" do
-#  action :install
-#  preferred_state "stable"
-#end
-
 # Generate selfsigned ssl
 #execute "make-ssl-cert" do
 #  command "make-ssl-cert generate-default-snakeoil --force-overwrite"
@@ -78,7 +74,7 @@ sites.each do |name|
   site = data_bag_item("sites", name)
 
   # Add site to apache config
-  web_app site["host"] do
+  web_app site["id"] do
     template "vhost.conf.erb"
     server_name site["host"]
     server_aliases site["aliases"]
