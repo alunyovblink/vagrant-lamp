@@ -40,23 +40,23 @@ execute "pear config-set auto_discover 1"
     end
 end
 
-#apache_site "default" do 
-#  enable true
-#end
+apache_site "default" do 
+  enable true
+end
 
 # Installing php pear packages
 # IMPORTANT: "pecl.php.net" is not available for now.
-#["PHP_CodeSniffer", "imagick", "xdebug"].each do |php_package|
-#  php_pear php_package do
-#    action :install
-#    preferred_state "stable"
-#  end
-#end
-
-php_pear "PHP_CodeSniffer" do
-  action :install
-  preferred_state "stable"
+["PHP_CodeSniffer", "imagick", "xdebug"].each do |php_package|
+  php_pear php_package do
+    action :install
+    preferred_state "stable"
+  end
 end
+
+#php_pear "PHP_CodeSniffer" do
+#  action :install
+#  preferred_state "stable"
+#end
 
 # Generate selfsigned ssl
 #execute "make-ssl-cert" do
@@ -88,6 +88,6 @@ sites.each do |name|
 
    # Add site info in /etc/hosts
    #bash "hosts" do
-   #  code "echo 127.0.0.1 #{site["host"]} #{site["aliases"].join(' ')} >> /etc/hosts"
+   #  code "echo 127.0.0.1 #{site["host"]} >> /etc/hosts"
    #end
 end

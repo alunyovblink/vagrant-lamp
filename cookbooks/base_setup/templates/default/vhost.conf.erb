@@ -1,7 +1,6 @@
 <VirtualHost *:80>
     ServerAdmin admin@localhost.com
     ServerName <%= @params[:server_name] %>
-	ServerAlias <% @params[:server_aliases].each do |a| %><%= a %> <% end %>
     DocumentRoot <%= @params[:docroot] %>
     
     ErrorLog /srv/logs/<%= @params[:server_name] %>.error.log
@@ -16,12 +15,11 @@
 
 <VirtualHost *:443>
     SSLEngine on
-  	SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
-  	SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
-  	
+    SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+    SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+    
     ServerAdmin admin@localhost.com
     ServerName <%= @params[:server_name] %>
-	ServerAlias <% @params[:server_aliases].each do |a| %><%= a %> <% end %>
     DocumentRoot <%= @params[:docroot] %>
     
     ErrorLog /srv/logs/<%= @params[:server_name] %>.error.log
