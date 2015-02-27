@@ -70,4 +70,13 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get update
   #   sudo apt-get install -y apache2
   # SHELL
+  
+  # Enable provisioning with a chef_solo.
+  config.vm.provision "chef_solo" do |chef|
+    chef.cookbooks_path = "cookbooks"
+    chef.data_bags_path = "data_bags"
+    
+    chef.add_recipe "base_setup"
+  end
+  
 end

@@ -1,0 +1,51 @@
+[submodule "cookbooks/apt"]
+	path = cookbooks/apt
+	url = https://github.com/opscode-cookbooks/apt.git
+[submodule "cookbooks/apache2"]
+	path = cookbooks/apache2
+	url = https://github.com/svanzoest-cookbooks/apache2.git
+[submodule "cookbooks/mysql"]
+	path = cookbooks/mysql
+	url = https://github.com/chef-cookbooks/mysql.git
+[submodule "cookbooks/php"]
+	path = cookbooks/php
+	url = https://github.com/opscode-cookbooks/php.git
+[submodule "cookbooks/iptables"]
+	path = cookbooks/iptables
+	url = https://github.com/opscode-cookbooks/iptables.git
+[submodule "cookbooks/logrotate"]
+	path = cookbooks/logrotate
+	url = git@github.com:stevendanna/logrotate.git
+[submodule "cookbooks/smf"]
+	path = cookbooks/smf
+	url = https://github.com/livinginthepast/smf
+[submodule "cookbooks/rbac"]
+	path = cookbooks/rbac
+	url = git@github.com:livinginthepast/rbac.git
+[submodule "cookbooks/yum-mysql-community"]
+	path = cookbooks/yum-mysql-community
+	url = git@github.com:chef-cookbooks/yum-mysql-community.git
+[submodule "cookbooks/yum"]
+	path = cookbooks/yum
+	url = git@github.com:chef-cookbooks/yum.git
+[submodule "cookbooks/build-essential"]
+	path = cookbooks/build-essential
+	url = git@github.com:opscode-cookbooks/build-essential.git
+[submodule "cookbooks/iis"]
+	path = cookbooks/iis
+	url = git@github.com:opscode-cookbooks/iis.git
+[submodule "cookbooks/windows"]
+	path = cookbooks/windows
+	url = git@github.com:opscode-cookbooks/windows.git
+[submodule "cookbooks/chef_handler"]
+	path = cookbooks/chef_handler
+	url = git@github.com:opscode-cookbooks/chef_handler.git
+[submodule "cookbooks/xml"]
+	path = cookbooks/xml
+	url = git@github.com:opscode-cookbooks/xml.git
+[submodule "cookbooks/chef-sugar"]
+	path = cookbooks/chef-sugar
+	url = git@github.com:sethvargo/chef-sugar.git
+[submodule "cookbooks/yum-epel"]
+	path = cookbooks/yum-epel
+	url = git@github.com:chef-cookbooks/yum-epel.git

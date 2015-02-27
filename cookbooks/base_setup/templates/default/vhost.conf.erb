@@ -1,0 +1,33 @@
+<VirtualHost *:80>
+    ServerAdmin admin@localhost.com
+    ServerName <%= @params[:server_name] %>
+    DocumentRoot <%= @params[:docroot] %>
+    
+    ErrorLog /srv/logs/<%= @params[:server_name] %>.error.log
+    CustomLog /srv/logs/<%= @params[:server_name] %>.access.log common
+    <Directory <%= @params[:docroot] %>>
+      Options Indexes FollowSymLinks
+      AllowOverride all
+      Order Allow,Deny
+      Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:443>
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+    SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+    
+    ServerAdmin admin@localhost.com
+    ServerName <%= @params[:server_name] %>
+    DocumentRoot <%= @params[:docroot] %>
+    
+    ErrorLog /srv/logs/<%= @params[:server_name] %>.error.log
+    CustomLog /srv/logs/<%= @params[:server_name] %>.access.log common
+    <Directory <%= @params[:docroot] %>>
+      Options Indexes FollowSymLinks
+      AllowOverride all
+      Order Allow,Deny
+      Allow from all
+    </Directory>
+</VirtualHost>
