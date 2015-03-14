@@ -77,6 +77,7 @@ Vagrant.configure(2) do |config|
     chef.data_bags_path = "data_bags"
 
     chef.add_recipe "base_setup"
+    chef.add_recipe "base_setup::vhosts"
   end
   
 end
