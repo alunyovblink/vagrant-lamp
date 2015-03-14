@@ -46,3 +46,7 @@ execute "pear config-set auto_discover 1"
       action :update
     end
 end
+
+apache_site "default" do 
+  enable true
+end
